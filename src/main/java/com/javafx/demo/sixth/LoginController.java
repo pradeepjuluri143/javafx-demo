@@ -25,9 +25,9 @@ import javafx.stage.Stage;
  * @author Pradeep
  *
  */
-public class LoginController extends Application {
+public class LoginController {
 	
-	static Map<String, String> userIdPwd;
+	
 	
 	@FXML
 	private TextField userName;
@@ -45,7 +45,7 @@ public class LoginController extends Application {
 		System.out.println("loginId is "+loginId);
 		//This is for demo purpose only never print passwords in log
 		System.out.println("password is "+pwd);
-		String pwdOfUser = userIdPwd.get(loginId);
+		String pwdOfUser = MyPortal.userIdPwd.get(loginId);
 		if(pwd.equals(pwdOfUser)) {
 			System.out.println("Login Successful");
 			feedBack.setText("Login Successful, redirecting to dashboard");
@@ -66,34 +66,11 @@ public class LoginController extends Application {
 	
 	@FXML
 	public void reset(ActionEvent event) {
+		System.out.println("In Reset");
 		userName.setText(null);
 		password.setText(null);
 	}
 	
-	@Override
-	public void init() {
-		System.out.println("In init");
-		userIdPwd=new HashMap<String, String>();
-		userIdPwd.put("admin", "admin123");
-		userIdPwd.put("hema", "hema123");
-		userIdPwd.put("suma", "suma123");
-		System.out.println("Size of the map is "+userIdPwd.size());
-	}
-
-	@Override
-	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-		Scene sc = new Scene(root);
-		primaryStage.setScene(sc);
-		primaryStage.show();
-
-	}
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		launch();
-	}
+	
 
 }

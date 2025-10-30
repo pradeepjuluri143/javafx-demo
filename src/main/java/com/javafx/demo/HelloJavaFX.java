@@ -25,12 +25,15 @@ public class HelloJavaFX extends Application {
         StackPane root = new StackPane();
         root.getChildren().add(btn);
         
-        // Create a Scene - contains the node tree
+        // Create a Scene - contains the node tree/Graph
         Scene scene = new Scene(root, 300, 250);
         
         // Set up the Stage - your application window
         primaryStage.setTitle("My First JavaFX App");
         primaryStage.setScene(scene);
+        primaryStage.setTitle("My Own App");
+        primaryStage.setResizable(false);
+        
         primaryStage.show();
 		
 	}

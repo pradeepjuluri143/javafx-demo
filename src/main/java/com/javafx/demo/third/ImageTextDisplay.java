@@ -48,7 +48,7 @@ public class ImageTextDisplay extends Application {
         ImageView imageView = new ImageView(image);
         imageView.setPreserveRatio(true);
         imageView.setFitWidth(400); // scale to fit width (height auto because preserve ratio)
-        imageView.setSmooth(true);
+        imageView.setSmooth(true);// Enables smooth scaling (bilinear filtering) when the image is resized — makes it look less pixelated and more visually appealing
 
         // Bottom small text label (status)
         Label statusLabel = new Label("Click the button to change title text.");
